@@ -5,8 +5,8 @@ settings:
   daysInHistogram: 90 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
-  allmonitorsOperational: '所有服务均正常Active'
-  notAllmonitorsOperational: '有服务未正常Active'
+  allmonitorsOperational: '所有服务均Active'
+  notAllmonitorsOperational: '有服务未Active'
   monitorLabelOperational: 'Active'
   monitorLabelNotOperational: 'No Active'
   monitorLabelNoData: '无数据'
@@ -15,6 +15,14 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
+  - id: baidu
+    name: 百度
+    description: '测试'
+    url: 'https://www.baidu.com'
+    method: GET
+    expectStatus: 200
+    linkable: true
+    
   - id: card-tab
     name: 导航站
     description: 'You write code. They handle the rest.' # default=empty
@@ -39,3 +47,19 @@ monitors:
     method: GET
     expectStatus: 200
     linkable: true
+    
+  - id: 苹果CMS-1
+    name: 苹果CMS（香港）
+    description: '我的影视站'
+    url: 'https://cms.ddq.us.kg'
+    method: GET
+    expectStatus: 200
+    linkable: false
+    
+  - id: 苹果CMS-2
+    name: 苹果CMS（波兰）
+    description: '我的影视站'
+    url: 'https://cms.techdd.us.kg'
+    method: GET
+    expectStatus: 200
+    linkable: false   
